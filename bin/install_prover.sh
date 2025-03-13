@@ -177,7 +177,7 @@ function parse_arguments() {
     echo "JOB_TIMEOUT is set to '$JOB_TIMEOUT'"
 }
 
-if ! command -v curl >/dev/null 2>&1; then
+if [ ! -x $(which curl) ]; then
     echo "Error: curl is required to download risc0-prover."
     exit 1
 fi
